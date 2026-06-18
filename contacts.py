@@ -37,4 +37,8 @@ elif args.remove:
     save_contacts(new_contacts)
     print(f"Removed {args.remove}")
 
-elif args.name and args.email
+elif args.name and args.email:
+    contacts = load_contacts()
+    contacts.append({"name": args.name, "email": args.email})
+    save_contacts(contacts)
+    print(f"Added {args.name} ({args.email})")
